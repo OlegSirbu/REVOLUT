@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {Column, Row, Text} from "../../../App.styled";
-import {getCurrency, getSign} from "../../util/currency";
+import { Column, Row, Text } from "../../../App.styled";
+import { getCurrency, getSign } from "../../util/currency";
 import AppContext from "../../contexts/appContext";
 
 type CurrencySlider = {

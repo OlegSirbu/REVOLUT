@@ -2,12 +2,13 @@ import React, {useState, useEffect, useContext} from 'react';
 import Spinner from 'react-bootstrap/Spinner'
 
 import { fetchCurrency } from "../../api";
-import CurrencySlider from '../currency-slider/CurrencySlider';
-import {Row, Column, Flex, Label, SubLabel, CurrencyWrapper, Text} from '../../../App.styled';
-import {getSign, getCurrency, getSymbols} from "../../util/currency";
-import InputCurrency from '../input-currency/InputCurrency'
-import Dropdown from '../dropdown/Dropdown'
+import { getSign, getCurrency, getSymbols } from "../../util/currency";
 import { TIME_FETCH_CURRENCY } from '../../constants';
+
+import { Row, Column, Flex, Label, SubLabel, CurrencyWrapper, Text } from '../../../App.styled';
+import Dropdown from '../dropdown/Dropdown'
+import InputCurrency from '../input-currency/InputCurrency';
+import CurrencySlider from '../currency-slider/CurrencySlider';
 import AppContext from "../../contexts/appContext";
 
 const Currency:React.FC = () => {

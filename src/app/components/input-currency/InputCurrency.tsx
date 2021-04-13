@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import { InputStyled, SubTest} from "../../../App.styled";
-import InputGroup from "react-bootstrap/InputGroup";
-import {getSign} from "../../util/currency";
 import CurrencyInput from "react-currency-input-field";
-import {Button} from "react-bootstrap";
+import { Button, InputGroup } from "react-bootstrap";
+
+import { InputStyled, SubTest} from "../../../App.styled";
+import { getSign } from "../../util/currency";
 import AppContext from "../../contexts/appContext";
 
 const InputCurrency:React.FC = () => {
@@ -16,6 +16,7 @@ const InputCurrency:React.FC = () => {
 		currencyAmountInput,
 		updateCurrencyAmountInput,
 	} = useContext(AppContext);
+
 	const handleOnValueChange = (value: string | undefined): void => {
 		const newValue = value;
 		if(!newValue){
@@ -29,20 +30,29 @@ const InputCurrency:React.FC = () => {
 			setNotification('');
 		}
 		updateCurrencyAmountInput(newValue);
+
 		if(refInput && refInput.current){
 			refInput.current.selectionStart = newValue.length;
 		}
 	};
 
-	useEffect( () => {
+	useEffect(() => {
 		if(refInput){
 			refInput?.current?.focus();
 		}
-	} );
+	});
 
 	return (
 		<InputStyled>
-			{notification && <SubTest as='span' fs={'14'} className={'small fade alert alert-danger show'}>{' '}{notification}</SubTest>}
+			{notification &&
+				<SubTest
+					as='span'
+					fs={'14'}
+					className={'small fade alert alert-danger show'}
+				>
+					{notification}
+				</SubTest>
+			}
 			<InputGroup className={'mb-3'}>
 				<InputGroup.Prepend>
 					<InputGroup.Text>{getSign(activeCurrency)}</InputGroup.Text>
