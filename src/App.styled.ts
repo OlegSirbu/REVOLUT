@@ -25,7 +25,7 @@ export const SliderStyled = styled.div`
   .carousel-control-next, .carousel-control-prev {
     width: 6%;
   }
-`
+`;
 
 export const CurrencyWrapper = styled.section`
    min-width: 500px;
@@ -38,16 +38,18 @@ export const CurrencyWrapper = styled.section`
 export const Label = styled.label`
   font-size: 24px;
 `;
+
 export const SubLabel = styled.span`
   font-size: 16px;
 `;
 
 export const InputStyled = styled.div`
   position: relative;
-   input {
-      width: 200px;
-   }
+  input {
+    width: 200px;
+  }
 `;
+
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,15 +70,15 @@ export const Flex = styled.div`
 export const Text = styled.div`
    font-size: ${(p:any) => p.fs ? `${p.fs}px` : '16px'};
    ${(p:any) => p.bottom && css`
-    align-items: flex-end;
+     align-items: flex-end;
      flex: 1;
      display: flex;
-      justify-content: flex-end;
+     justify-content: flex-end;
   `}
 `;
 
 export const SubTest = styled.span`
-   font-size: ${(p:any) => p.fs ? `${p.fs}px` : '12px'};
+  font-size: ${(p:any) => p.fs ? `${p.fs}px` : '12px'};
   position: absolute;
   top: -48px;
 `
