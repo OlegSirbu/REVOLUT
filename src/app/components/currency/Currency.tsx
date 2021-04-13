@@ -35,22 +35,13 @@ const Currency:React.FC = () => {
         }
     }
 
-    useEffect( () => {
-        loadCurrency();
-    }, [])
-
     useEffect(() => {
+        loadCurrency();
         const tick = setInterval(() => {
             loadCurrency()
         }, TIME_FETCH_CURRENCY)
         return () => clearInterval(tick);
-    }, []);
-
-    useEffect( () => {
-        if(!loading){
-            loadCurrency();
-        }
-    },[activeCurrency]);
+    }, [activeCurrency]);
 
     const handleSelectCurrency = (e: string) => updateActiveCurrency(e);
 
